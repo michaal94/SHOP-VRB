@@ -1,0 +1,30 @@
+{%- comment -%}
+  Include vars:
+	title
+  subtitle
+	photo
+	photo-alt
+	auto-header
+	content
+{%- endcomment -%}
+
+{%- assign _title = include.title | default: 'Untitled' -%}
+{%- assign _slug = include.title | strip_html | slugify | default: 'untitled' -%}
+
+{%- if include.photo and include.photo-alt -%}
+	{%- capture _photo -%}
+		<img src="{{- include.photo | relative_url -}}" alt="{{- include.photo-alt -}}"  style="opacity: 1.0; height: 100%; padding: 0">
+	{%- endcapture -%}
+	{%- assign _class = 'shade-one cover dark' -%}
+{%- else -%}
+	{%- assign _photo = '' -%}
+	{%- capture _class -%}shade-{%- cycle 'two', 'three', 'four', 'three' -%}{%- endcapture -%}
+{%- endif -%}
+
+<section id="{{- _slug -}}" class="{{- _class -}}" style="padding: 0em 0;">
+  <div class="container" style="height: 16em; width: 100%; margin: 0; padding: 0">
+    <div class="row" style="width: 100%; overflow-x: scroll; height: 100%; margin: 0">
+	   {{- _photo -}}
+    </div>
+  </div>
+</section>

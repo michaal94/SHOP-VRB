@@ -1,0 +1,96 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@import "jekyll-theme-prologue";
+
+.shopvrb-strong{
+    font-weight: 600
+}
+
+.button{
+    background-color: #d2ae6de3;
+
+    &:hover {
+        background-color: #d2b47fe3;
+    }
+
+    &:active {
+        background-color: #cea660eb;
+    }
+}
+
+#main {
+    > section, article {
+        &.cover {
+            img.back {
+                opacity:0.5;
+            }
+        }
+        &.shade-one {
+            background-color: #222223;
+        }
+    }
+}
+
+
+.column-publication-right {
+    text-align: right;
+    margin: auto;
+    margin-right: 0;
+    margin-left: 0;
+    max-width: 66.7%;
+    // width: 66.7%;
+}
+
+.column-publication-left {
+    text-align: left;
+    margin: auto;
+    margin-right: 0;
+    margin-left: 0;
+    max-width: 66.7%;
+    // width: 66.7%;
+}
+
+.column-publication-img {
+    margin: auto;
+    margin-right: 0;
+    margin-left: 0;
+    max-width: 33.3%;
+    // width: 33.3%;
+}
+
+.column-half {
+    width: 45%;
+}
+
+.table-600 {
+    width: 100%;
+    min-width: 400px
+}
+
+@media screen and (max-width: 736px) {
+    .column-publication {
+        max-width: 100%;
+    }
+    .column-publication-img {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .column-half {
+        width: 90%;
+    }
+}
+
+.small-font {
+    font-size: 12pt;
+}
+
+@include breakpoint(narrower) {
+    .small-font{
+        font-size: 10pt;
+    }
+}
+
+
